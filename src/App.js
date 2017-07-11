@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 //import Bootstrap from 'bootstrap';
 import axios from 'axios';
 import Item from './Item'
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import './App.css';
+
 
 class App extends Component {
   constructor(props) {
@@ -28,9 +29,11 @@ class App extends Component {
   
   render() {
     return (
-      <div className="row">
-      {this.state.posts.map((post) => <Item data={post} / >)}
-      </div>
+      <form onSubmit="">
+        <div className="row">
+          {this.state.posts.map((post) => <Item data={post} / >)}
+        </div>
+      </form>
     );
   }
 }

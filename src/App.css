@@ -20,7 +20,63 @@
 
 .Item {
   padding-bottom: 15px;
+  position: relative;
 }
+
+.Item > img {
+  width:100%;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+.Item:after {
+    content:'\A';
+    position:absolute;
+    width:calc(100% - 30px);
+    height:calc(100% - 15px);
+    top:0; left:15px;
+    box-sizing: border-box;
+    
+    
+    background:rgba(0,0,0,0.6);
+    opacity:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.Item:hover:after {
+    opacity:1;
+}
+
+img.Common {
+  background-color: #B0C3D9;
+}
+img.Uncommon {
+  background-color: #5E98D9;
+}
+img.Rare {
+  background-color: #4B69FF;
+}
+img.Mythical {
+  background-color: #8847FF;
+}
+img.Legendary {
+  background-color: #D32CE6;
+}
+img.Ancient {
+  background-color: #EB4B4B;
+}
+img.Immortal {
+  background-color: #E4AE33;
+}
+img.Arcana {
+  background-color: #ADE55C;
+}
+img.Seasonal {
+  background-color: #FFF34F;
+}
+
+
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

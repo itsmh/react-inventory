@@ -8,8 +8,8 @@ class Item extends Component {
       icon_postfix : ''
     }
     this.state.rarity = this.props.data.tags.reduce((a,b)=>b.category=="Rarity" ? b.name: a)
+    this.state.className = "img-fluid img-thumbnail " + this.state.rarity
     
-
   }
 
   componentDidMount() {
@@ -19,11 +19,12 @@ class Item extends Component {
   }
   render() {
     return (
-      <div className="col col-md-2 col-lg-2 col-sm-4 Item {this.state.rarity}">
+      this.props.data.tradable ? 
+      <div className="col col-md-2 col-lg-2 col-sm-6 col-xs-12 Item">
         <img src={this.state.icon_baseUrl + this.props.data.icon_url + 
           this.state.icon_postfix} 
-        className="img-fluid img-thumbnail" />
-      </div>
+        className={this.state.className} />
+      </div>  : false
     );
   }
 }

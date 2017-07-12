@@ -42,9 +42,23 @@
     opacity:0;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
+    cursor: pointer;
 }
+.Item.Checked:after, 
 .Item:hover:after {
     opacity:1;
+    cursor: pointer;
+}
+.Item.Checked:after {
+  font : normal normal normal 38px/1 FontAwesome;
+  content: "\f05d";
+  color: #fff;
+  display: -webkit-flex; /* Safari */
+  -webkit-justify-content: space-around; /* Safari 6.1+ */
+  flex-wrap: flex;
+  display: flex;
+  justify-content: center;
+  padding-top:20px;
 }
 
 img.Common {

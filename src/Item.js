@@ -9,7 +9,7 @@ class Item extends Component {
       icon_baseUrl : 'https://steamcommunity-a.akamaihd.net/economy/image/',
       icon_postfix : ''
     }
-    this.setState.rarity = this.props.data.tags.reduce((a,b)=>b.category==="Rarity" ? b.name: a)
+    this.state.rarity = this.props.data.tags.reduce((a,b)=>b.category==="Rarity" ? b.name: a)
     this.state.className = "img-fluid img-thumbnail " + this.state.rarity
     this.state.checked = false;
     
@@ -41,7 +41,7 @@ class Item extends Component {
                 type="checkbox" 
                 checked={this.state.checked}
                 name="items[]" 
-                value={this.props.data.classid + '_' + this.props.data.instanceid} />
+                value={this.props.data.assetid + '_' + this.props.data.instanceid} />
       </div>  : false
     );
   }
